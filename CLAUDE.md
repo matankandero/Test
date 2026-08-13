@@ -26,9 +26,10 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
 
 ## Standing rule — expired stock collection (פגי תוקף)
 Matan gets a consignment-stock expiry report (xlsx, per-warehouse: מחסן / product / qty / lot / expiry date).
-1. Every time a weekly schedule is built, for each location Matan visits add a task: collect the expired / about-to-expire items at that site (list them specifically from the latest expiry report).
-2. For locations with expired or imminently-expiring stock that are NOT on the schedule — raise an alert so Matan can reschedule or arrange collection another way.
-3. Ask for a fresh expiry report if the last one is more than ~2 weeks old.
+1. IMPORTANT: items can only be collected AFTER their expiry date has passed — never suggest collecting an item before it expires. "Collect at visit" applies only to items already expired as of the visit date.
+2. Every time a weekly schedule is built, for each location Matan visits add a task: collect the items at that site that will already be expired by the visit date (list them specifically from the latest expiry report).
+3. For sites holding already-expired stock with no upcoming visit, and for items about to expire where no visit is planned shortly after the expiry date — raise an alert so Matan can plan a visit after the expiry or arrange things differently.
+4. Ask for a fresh expiry report if the last one is more than ~2 weeks old.
 
 ### Expiry snapshot (from report uploaded 13.8.2026) — expired or expiring by 30.9.26, units per site
 - Ichilov (loans warehouse D06): ~21 units expired by 15.8 (largest pile) + more expiring 28.8–26.9
