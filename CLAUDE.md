@@ -21,6 +21,10 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
 - Dr. Alexei — Angio, Assaf Harofeh (Shamir)
 - Dr. Saar Minha — Assaf Harofeh (Shamir) Cardio
 
+## Upcoming commitments
+- 9.9.2026 — presentation at Hadassah vascular (כלי דם). Task: improve the deck + prepare (run hospital-meeting-prep closer to the date). Same visit: collect Hadassah expired stock (all 3 items expired by then).
+- Carmel visit of Sunday 16.8 was skipped — rolled to Sunday 23.8 (procedures Nujidat/Hashem, Cordis 6F answer, first Selution case push, collect 3 expired items).
+
 ## Notes
 - Carmel Cardio: joining procedures in the cath lab is NOT possible (insurance/access issue, unresolvable) — follow cases from the control room only.
 
