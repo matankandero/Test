@@ -119,6 +119,11 @@ matching the account correctly matters more than translating beautifully.
    python scripts/append_entry.py --file "<full tracker path>" \
      --account "<account>" --entry "<translated text>" --date "<date>" --dry-run
    ```
+   **Strip the leading `[D.M]` from the staging file's entry text before
+   passing it to `--entry`.** The script writes the paragraph itself as
+   `<date> Update: <entry>`, so leaving the bracket in produces a
+   double-dated line (`1.9 Update: [1.9] I joined...`). The date belongs in
+   `--date` only.
    Collect every preview. If any entry's account isn't found, stop and ask
    Matan instead of guessing (the script's error lists known accounts to help
    him pick).
