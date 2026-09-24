@@ -45,6 +45,24 @@ def find_header(ws):
     )
 
 
+def find_activity_col(ws):
+    """Locate the Activity column by its own 'Activity' header label.
+
+    Do NOT derive it as owner_col + 1: in the real trackers the Account /
+    Account Manager header sits in columns B/C while Activity is in column E,
+    with an empty column D between them. Deriving it by offset silently
+    targets that empty column, so the entry is written nowhere visible and the
+    real history is left untouched."""
+    for row in ws.iter_rows():
+        for cell in row:
+            if isinstance(cell.value, str) and cell.value.strip() == "Activity":
+                return cell.column
+    raise RuntimeError(
+        "Could not find an 'Activity' header cell. The sheet layout may have "
+        "changed — stop and ask Matan rather than guessing."
+    )
+
+
 def merged_range_containing(ws, row, col):
     """Return the merged cell range that contains (row, col), or None."""
     for merged_range in ws.merged_cells.ranges:
@@ -99,16 +117,27 @@ def find_account_block(ws, header_row, account_col, account_name):
     merged_range = merged_range_containing(ws, cell.row, cell.column)
     if merged_range is not None:
         return merged_range.min_row, merged_range.max_row
-    return cell.row, cell.row
+
+    # The Account column is not actually merged in these files: an account
+    # simply owns every row from its own row until the next non-empty Account
+    # cell. Treating the block as a single row loses the continuation rows
+    # where the most recent entries live.
+    next_account_row = None
+    for row in ws.iter_rows(min_row=cell.row + 1, min_col=cell.column, max_col=cell.column):
+        for other in row:
+            if isinstance(other.value, str) and other.value.strip():
+                next_account_row = other.row
+                break
+        if next_account_row is not None:
+            break
+    last_row = (next_account_row - 1) if next_account_row else ws.max_row
+    return cell.row, max(cell.row, last_row)
 
 
-def find_activity_cell(ws, block_min_row, block_max_row, account_col, owner_col):
-    """The Activity column is the one immediately after the Account Manager
-    column, per the file's observed layout (Account, Account Manager,
-    Activity, ...). Within the account's block, use the last row that
-    already has non-empty text in that column — new entries get appended
-    to the most recent existing paragraph cell, never to a blank row."""
-    activity_col = owner_col + 1
+def find_activity_cell(ws, block_min_row, block_max_row, activity_col):
+    """Within the account's block, use the last row that already has non-empty
+    text in the Activity column — new entries get appended to the most recent
+    existing paragraph cell, never to a blank row."""
     for row_idx in range(block_max_row, block_min_row - 1, -1):
         cell = ws.cell(row=row_idx, column=activity_col)
         if isinstance(cell.value, str) and cell.value.strip():
@@ -130,8 +159,16 @@ def main():
     ws = wb.worksheets[0]
 
     header_row, account_col, owner_col = find_header(ws)
+    activity_col = find_activity_col(ws)
     block_min_row, block_max_row = find_account_block(ws, header_row, account_col, args.account)
-    cell = find_activity_cell(ws, block_min_row, block_max_row, account_col, owner_col)
+    cell = find_activity_cell(ws, block_min_row, block_max_row, activity_col)
+
+    if not (cell.value or "").strip():
+        raise RuntimeError(
+            f"The Activity cell chosen for '{args.account}' (row {cell.row}, col {cell.column}) "
+            "is empty. That almost always means the column or block was detected wrongly — "
+            "stop and check the sheet layout rather than writing into a blank cell."
+        )
 
     old_text = cell.value or ""
     new_paragraph = f"{args.date} Update: {args.entry.strip()}"
