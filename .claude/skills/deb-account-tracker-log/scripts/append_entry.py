@@ -163,12 +163,23 @@ def main():
     block_min_row, block_max_row = find_account_block(ws, header_row, account_col, args.account)
     cell = find_activity_cell(ws, block_min_row, block_max_row, activity_col)
 
-    if not (cell.value or "").strip():
+    # An empty Activity cell is legitimate for a brand-new account that has no
+    # history yet. It is NOT legitimate when the whole detected column is
+    # blank — that means the column was misdetected, and writing there would
+    # silently put the entry nowhere. Check the column, not the single cell.
+    column_has_text = any(
+        isinstance(c.value, str) and c.value.strip()
+        for row in ws.iter_rows(min_col=activity_col, max_col=activity_col)
+        for c in row
+    )
+    if not column_has_text:
         raise RuntimeError(
-            f"The Activity cell chosen for '{args.account}' (row {cell.row}, col {cell.column}) "
-            "is empty. That almost always means the column or block was detected wrongly — "
-            "stop and check the sheet layout rather than writing into a blank cell."
+            f"Column {activity_col} contains no text anywhere, so it is not the Activity "
+            "column. Stop and check the sheet layout rather than writing into a blank column."
         )
+    if not (cell.value or "").strip():
+        print(f"[note] '{args.account}' has no existing Activity text - writing the first entry "
+              f"into the empty cell at row {cell.row}, col {cell.column}.")
 
     old_text = cell.value or ""
     new_paragraph = f"{args.date} Update: {args.entry.strip()}"
