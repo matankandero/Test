@@ -35,6 +35,38 @@ Matan gets a consignment-stock expiry report (xlsx, per-warehouse: מחסן / pr
 3. For sites holding already-expired stock with no upcoming visit, and for items about to expire where no visit is planned shortly after the expiry date — raise an alert so Matan can plan a visit after the expiry or arrange things differently.
 4. Ask for a fresh expiry report if the last one is more than ~2 weeks old.
 
+## Standing rule — rescuing SHORT-DATED stock by transfer to Ichilov (קצרי תוקף)
+
+There is an agreement with Ichilov: short-dated stock from other hospitals is **moved to
+Ichilov**, which tries to consume it before expiry so it is not written off. Matan carries the
+items. Ichilov's `D06` warehouse (`השאלות-איכילוב צנתורים`) is that consolidation
+destination, which is why it holds far more short-dated and expired units than any other site —
+that pile is largely transfers in, not neglect.
+
+**This is a different action from collection, and the two must not be confused:**
+
+| State of the item | Action | Why |
+|---|---|---|
+| Already expired | **Collect** (remove from shelf) | Dead stock; cannot be used. Rule above. |
+| Expiring within ~1 month, Matan visiting that department | 🚩 **Flag it and tell him to take it** | Still usable; transfer to Ichilov so it is consumed instead of written off. |
+
+So: never suggest *collecting* an item before it expires (the rule above still holds), but **do**
+flag a short-dated item for *transfer* while it is still live. Raise the flag in every
+hospital-meeting-prep and weekly schedule for the department being visited.
+
+**Scope as currently understood:** `D06` holds only coronary `SC14*` / `SLR PTCA 014` balloons,
+so transfers there are coronary Selution balloons out of cath-lab warehouses. Whether peripheral
+`SLR PTA 018` balloons, SABER/POWERFLEX or stents are also transferable (and to where) is NOT
+confirmed — ask Matan before flagging those.
+
+**Check Ichilov's holdings before flagging a transfer.** A transfer only rescues the unit if
+Ichilov does not already hold that size. Where it does — often the *same lot with the same expiry
+date* — the transfer just relocates the write-off, and the real rescue is **local consumption**:
+ask the department to put that unit at the front of the shelf for the next suitable case. As of
+the 09-2026 report, `D06` holds 53 live units (including 9x 3.25x25, 8x 3.25x15, 7x 3.25x30,
+6x 3.00x25, 6x 3.25x10) plus 25 already expired, so the agreement is demonstrably **not**
+absorbing everything sent to it. Treat Ichilov as having limited capacity, not as a dumping ground.
+
 ### Expiry snapshot (from report `/matan kandero/פגי_תוקף_קונסיגנציה_2026-09.csv`, generated ~30.9.2026)
 Source xlsx was uploaded to chat on 5.10.2026; a CSV copy was written to the private Dropbox
 folder under the standard name so future runs find it. Covers expiries up to 31.3.2027.
