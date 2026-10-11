@@ -33,6 +33,14 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
   reinforces them in conversation when it comes up; he does not drive them. Do not put them on
   his task list.
 
+## Standing rule — where to push
+
+**Matan authorised pushing directly to `main` (11.10.2026), and it is the default from now on.**
+This repo is memory, not code: a new cloud session clones `main`, so anything left on a side
+branch is invisible to the next session — which already happened once and silently restored a
+six-week-old CLAUDE.md. Fetch and merge `origin/main` before editing so a parallel session's
+update is not overwritten, then commit and push to `main`.
+
 ## Standing rule — expired stock collection (פגי תוקף)
 Matan gets a consignment-stock expiry report (xlsx, per-warehouse: מחסן / product / qty / lot / expiry date).
 1. IMPORTANT: items can only be collected AFTER their expiry date has passed — never suggest collecting an item before it expires. "Collect at visit" applies only to items already expired as of the visit date.
