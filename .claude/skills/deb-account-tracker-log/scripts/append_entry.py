@@ -136,8 +136,23 @@ def find_account_block(ws, header_row, account_col, account_name):
 
 def find_activity_cell(ws, block_min_row, block_max_row, activity_col):
     """Within the account's block, use the last row that already has non-empty
-    text in the Activity column — new entries get appended to the most recent
-    existing paragraph cell, never to a blank row."""
+    text in the Activity column.
+
+    ⚠️ This is a POSITIONAL guess, not a chronological one, and for some accounts
+    it is WRONG. In both trackers several blocks span two rows where the block's
+    FIRST row holds the running, most-recent log (the "<date> Update:" paragraphs)
+    and the SECOND row holds an older imported block. As of the 24.9 build that is
+    true of `Kaplan Cardio` (newest text in row 6, older in row 7) and of `Meir` in
+    the endo file (newest in row 6, older in row 7), while for `Soroka Cardio` and
+    `Ichilov` the second row genuinely is the newer one.
+
+    Appending to the wrong one does not corrupt anything — this script only ever
+    rewrites one cell's text — but it leaves the account's entries split across two
+    cells out of chronological order.
+
+    So before a weekly build, READ the candidate cells and check which one ends with
+    the latest-dated entry. Where the last row is not the newest, pass the verified
+    row explicitly with --row."""
     for row_idx in range(block_max_row, block_min_row - 1, -1):
         cell = ws.cell(row=row_idx, column=activity_col)
         if isinstance(cell.value, str) and cell.value.strip():
@@ -153,6 +168,15 @@ def main():
     parser.add_argument("--entry", required=True, help="Translated English entry text to append")
     parser.add_argument("--date", required=True, help="Date of the meeting, in the file's D.M convention (e.g. '7.7')")
     parser.add_argument("--dry-run", action="store_true", help="Preview the change without writing the file")
+    parser.add_argument(
+        "--row",
+        type=int,
+        default=None,
+        help="Append to this exact sheet row in the Activity column instead of "
+             "letting the script guess. Must fall inside the matched account's "
+             "block. Use it when the block's last row is not the one holding the "
+             "newest entry (see find_activity_cell) - verify by reading the cells first.",
+    )
     args = parser.parse_args()
 
     wb = openpyxl.load_workbook(args.file)
@@ -161,7 +185,21 @@ def main():
     header_row, account_col, owner_col = find_header(ws)
     activity_col = find_activity_col(ws)
     block_min_row, block_max_row = find_account_block(ws, header_row, account_col, args.account)
-    cell = find_activity_cell(ws, block_min_row, block_max_row, activity_col)
+    if args.row is not None:
+        if not (block_min_row <= args.row <= block_max_row):
+            raise RuntimeError(
+                f"--row {args.row} is outside the block for '{args.account}' "
+                f"(rows {block_min_row}-{block_max_row}). Refusing to write outside "
+                "the account's own rows."
+            )
+        cell = ws.cell(row=args.row, column=activity_col)
+        if not (isinstance(cell.value, str) and cell.value.strip()):
+            raise RuntimeError(
+                f"--row {args.row} has no existing Activity text, so it is not a log cell. "
+                "Pick the row that already holds the account's entries."
+            )
+    else:
+        cell = find_activity_cell(ws, block_min_row, block_max_row, activity_col)
 
     # An empty Activity cell is legitimate for a brand-new account that has no
     # history yet. It is NOT legitimate when the whole detected column is
