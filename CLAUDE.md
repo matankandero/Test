@@ -125,3 +125,11 @@ Data-quality flags in this report:
   expired shelf stock. It needs booking out with logistics. A unit still on an expiry report is
   not proof it is still on a shelf.
 - **כרמל**: the 3 expired items that the 23.8 visit was supposed to collect are all still listed.
+- **הלל יפה צנתורים**: `SC14200020` lot `L93991` (exp 11.10) was not in the cath lab when Matan
+  looked on 12.10 — presumably used.
+
+⚠️ **Both items checked physically so far turned out to have left the shelf, not to be sitting
+there expired** (the Meir stent and this one), in each case because the consumption was never
+booked out. So the expired-unit count in this report may be materially inflated. Before chasing
+an old expired item, have the warehouse or head nurse confirm it is physically there — and raise
+with logistics how consumption gets recorded at all.
