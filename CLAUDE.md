@@ -119,7 +119,9 @@ Clean (nothing expired): **שערי צדק** (all 4 units collected 30.9 — ver
 
 Data-quality flags in this report:
 - **Negative quantity**: `D06` איכילוב, `SC14225030` lot `L93732`, exp 15.8, qty **-1**. A stock-count error — raise with logistics.
-- **מאיר**: `STENT SMART CONTROL 7X40` lot `18356548` (exp 31.7) is still listed although it was
-  reported collected on 23.9. Either it was not actually collected or the warehouse record was
-  never updated. Verify before telling anyone it is closed.
+- **מאיר**: `STENT SMART CONTROL 7X40` lot `18356548` (exp 31.7) is still listed, and Matan
+  checked (12.10): it was **used in a patient before it expired**, not collected. So it is not a
+  loss at all — but the warehouse record was never updated, which is why it keeps appearing as
+  expired shelf stock. It needs booking out with logistics. A unit still on an expiry report is
+  not proof it is still on a shelf.
 - **כרמל**: the 3 expired items that the 23.8 visit was supposed to collect are all still listed.
