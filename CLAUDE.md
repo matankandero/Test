@@ -41,6 +41,21 @@ branch is invisible to the next session — which already happened once and sile
 six-week-old CLAUDE.md. Fetch and merge `origin/main` before editing so a parallel session's
 update is not overwritten, then commit and push to `main`.
 
+## Standing rule — Hagar Ilan's daily activity report
+
+Matan receives a **daily activity report from Hagar Ilan** covering the whole Cordis
+catalogue. Whenever he says one has arrived, run the `selution-daily-report` skill:
+a per-centre review of **Selution only** — usage, orders and forecast.
+
+**Selution is exactly two SKU families, verified against the 09-2026 expiry report:**
+`SC14*` (`SLR PTCA 014`, coronary) and `SE18*` (`SLR PTA 018`, peripheral). Every other
+prefix in the catalogue — POWERFLEXPRO, SABER, SMART CONTROL, GENESIS, SMART FLEX,
+OUTBACK, ANGIOGUARD, PRECISE PRO, OPTEASE — is Sigal's and must be filtered out, not
+mentioned. Generic test: the product description contains `SUSTAINED LIMUS RELEASE` / `SLR`.
+
+Ask for the report file itself if he only says it arrived — never analyse from memory
+or from an older report.
+
 ## Standing rule — expired stock collection (פגי תוקף)
 Matan gets a consignment-stock expiry report (xlsx, per-warehouse: מחסן / product / qty / lot / expiry date).
 1. IMPORTANT: items can only be collected AFTER their expiry date has passed — never suggest collecting an item before it expires. "Collect at visit" applies only to items already expired as of the visit date.
