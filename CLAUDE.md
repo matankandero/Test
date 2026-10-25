@@ -22,7 +22,11 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
 - Dr. Saar Minha — Assaf Harofeh (Shamir) Cardio
 
 ## Upcoming commitments
-- **22.10.2026 — course in Budapest, given by Dr. Galili (Hadassah vascular). Matan is flying. Needs preparation.**
+- Budapest course (22.10.2026, Dr. Galili / Hadassah vascular, Cordis workshop): done. Summary given 25.10.
+  Follow-ups from it: Dr. Galili runs an industry-independent Israeli multicentre infra-inguinal
+  registry (REDCap, ~6 centres, ~600 procedures, target ~5,000) comparing drug technologies; find out
+  which centres take part and whether Selution cases are captured. BTK: no positive DCB RCT yet
+  (SELUTION BTK still running), so do not promote Selution below the knee as proven.
 - **4.11.2026 — presentation at Shaarei Zedek Cardio.** Date finally fixed after 23.9 and 30.9 were both missed.
 - Athens course: done. Dr. Majdi, Dr. Haberman and Dr. Zisman-Keren flew; all logistics closed.
 
