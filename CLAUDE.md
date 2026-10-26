@@ -60,6 +60,28 @@ mentioned. Generic test: the product description contains `SUSTAINED LIMUS RELEA
 Ask for the report file itself if he only says it arrived — never analyse from memory
 or from an older report.
 
+## Standing rule — missing sizes (חוסרים במידות)
+
+**At every hospital visit, check two things, not one: expired stock (rule below) AND whether
+a Selution size the department actually uses is missing from the shelf.** Matan made this a
+fixed item himself on 26.10.2026; put it in every weekly schedule and every meeting prep.
+
+Why it is a standing rule: on **19.10.2026 at Hillel Yaffe**, Dr. Majdi — our most loyal user
+in the country — prepared an LCX lesion properly with NC and a cutting balloon, asked for a
+**2.75 DEB, and there was no Selution 2.75 on the shelf, so the case went to a paclitaxel
+Prevail.** Nothing was wrong with the preparation, the operator or the evidence. The size was
+missing. A separate "complete the missing sizes" task had been opened on 24.8, handed to Sigal
+on 11.10, and the case was lost eight days later.
+
+How to split it:
+- **Which sizes belong on that shelf is a Selution question, so it is Matan's.** The size
+  standard is his to raise and to correct.
+- **The replenishment itself follows the normal division** — at Hillel Yaffe that is Sigal's.
+  Hand it over, but **verify it was actually done.** "Passed to Sigal" is not "handled"; the
+  precedent above is exactly that failure.
+- Report a gap with the case behind it ("a 2.75 was asked for on 19.10 and went to a
+  competitor"), never as a general request. A gap with a lost case attached gets acted on.
+
 ## Standing rule — expired stock collection (פגי תוקף)
 Matan gets a consignment-stock expiry report (xlsx, per-warehouse: מחסן / product / qty / lot / expiry date).
 1. IMPORTANT: items can only be collected AFTER their expiry date has passed — never suggest collecting an item before it expires. "Collect at visit" applies only to items already expired as of the visit date.
