@@ -20,6 +20,9 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
 - Dr. Sheinman — Hillel Yaffe Cardio
 - Dr. Alexei — Angio, Assaf Harofeh (Shamir)
 - Dr. Saar Minha — Assaf Harofeh (Shamir) Cardio
+- **Dr. Gal Sela — Kaplan Cardio.** Matan wants to join his procedures (26.10.2026); the day
+  is unknown and is not Haberman's Tuesday. ~20 balloons a week — the highest-volume operator
+  in the portfolio.
 
 ## Upcoming commitments
 - Budapest course (22.10.2026, Dr. Galili / Hadassah vascular, Cordis workshop): done. Summary given 25.10.
