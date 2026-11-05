@@ -12,6 +12,7 @@ Use these when building Matan's weekly schedule (לוז). Israeli work week: Sun
 | Carmel Endo | Dr. Nujidat / Dr. Hashem | Sunday |
 | Meir Endo | Dr. Michail | Sunday / Monday |
 | Shaarei Zedek Cardio | Dr. Juabeh | Wednesday |
+| Kaplan Cardio | Dr. Gal Sela | Monday / Thursday |
 
 Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at Kaplan).
 
@@ -20,9 +21,8 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
 - Dr. Sheinman — Hillel Yaffe Cardio
 - Dr. Alexei — Angio, Assaf Harofeh (Shamir)
 - Dr. Saar Minha — Assaf Harofeh (Shamir) Cardio
-- **Dr. Gal Sela — Kaplan Cardio.** Matan wants to join his procedures (26.10.2026); the day
-  is unknown and is not Haberman's Tuesday. ~20 balloons a week — the highest-volume operator
-  in the portfolio.
+*(Dr. Gal Sela — answered 5.11.2026: Monday and Thursday. Moved to the table above.
+**Monday collides with Majdi at Hillel Yaffe, so Thursday is the day to join him.**)*
 
 ## Upcoming commitments
 - Budapest course (22.10.2026, Dr. Galili / Hadassah vascular, Cordis workshop): done. Summary given 25.10.
