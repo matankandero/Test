@@ -30,6 +30,10 @@ Known constraint: Dr. Haberman is at the Kupat Holim clinic on Mondays (not at K
   registry (REDCap, ~6 centres, ~600 procedures, target ~5,000) comparing drug technologies; find out
   which centres take part and whether Selution cases are captured. BTK: no positive DCB RCT yet
   (SELUTION BTK still running), so do not promote Selution below the knee as proven.
+- Cyprus (Nicosia) Cordis Central Cluster Selution SLR distributor training, 10–13.11.2026.
+  Presenters: Vladan Radisavljevic (welcome, pipeline, 2027 cluster strategy), Kristie Vuong
+  (technology, DeNovo, TCT data), Solène Ramsamy (quizzes, marketing resources), Jiri Paska
+  (KOL checklist). Prep given 10.11.
 - **4.11.2026 — presentation at Shaarei Zedek Cardio.** Date finally fixed after 23.9 and 30.9 were both missed.
 - Athens course: done. Dr. Majdi, Dr. Haberman and Dr. Zisman-Keren flew; all logistics closed.
 
