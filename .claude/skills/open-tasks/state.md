@@ -856,7 +856,16 @@ Selution בכלים קטנים מ-2.25 מ"מ (ההגדרה ל-small vessels הי
 - **DeNovo:** ITT 5.3% מול 4.4% (הפרש 0.9, עמד ב-NI). Per-protocol 5.2% מול 4.1% — **לא עמד ב-NI**
   (2.63 מול מרווח 2.44). ~8 מכל 10 בזרוע Selution יצאו בלי סטנט. Co-primary שני ב-5 שנים עם
   conditional superiority. מעקב שנתיים — הדאטה נעול, פרסום לא מובטח.
-- **כתב היד של DeNovo עדיין לא פורסם** (נדחה ב-NEJM, שרצה את שני ה-endpoints).
+- ⚠️ **תיקון (מצילום שקף, 11.11): DeNovo כן פורסם** — השקף מצטט Spaulding C. et al., Circulation
+  154.3 (2026): 185-197 ("randomized, open-label, noninferiority trial"). NEJM דחה, Circulation קיבל.
+  לאמת ב-PubMed ולהוריד את המאמר לפני הזום עם סלע.
+- **שקף החריגות (per-protocol):** הוצאו 69 (4.2%) מול 60 (3.7%). Non-trial device ‏31.9% מול 46.7%;
+  multi-lesion ‏40.6% מול 71.7%; TVF במוצאים 7.3% מול 13.5% — כלומר כ-5 מול כ-8 אירועים בלבד.
+- **שקף High-risk (TCT, אינטראקציות):** ביפורקציה p=0.96/0.81 וסוכרת p=1.00 — אין שינוי אפקט;
+  HBR 0.04, complex procedure 0.01, vessel size 0.04/0.03, multivessel 0.03, calcification 0.04/0.06,
+  long lesion 0.07/0.08. סף חקרני p<0.15.
+- **לבקש מ-Kristie/Solène:** "SELUTION SLR Cheat Sheet.pdf" ומסמך ה-Objections (נראו כלשוניות פתוחות
+  בצילום), ואת המקרא של שקף ה-drug transfer (62.48 / 16.56 / 20.97, בלון 3.0x20).
 - **תתי-קבוצות (hypothesis-generating):** Complex PCI ‏7.2% מול 10.2% (pre-specified, EuroPCR);
   HBR ‏4.9% מול 7.9% (522 חולים); High-risk PCI — post-hoc, הוצג ב-TCT.
 - **פרופיל/sheath קטן יותר:** בבדיקה, בלי לוח זמנים — לא להבטיח לכרמל.
